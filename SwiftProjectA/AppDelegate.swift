@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  SwiftProjectA
 //
-//  Created by David Raftis on 18/02/2015.
+//  Created by DR on 18/02/2015.
 //  Copyright (c) 2015 Spelga Software Limited. All rights reserved.
 //
 
