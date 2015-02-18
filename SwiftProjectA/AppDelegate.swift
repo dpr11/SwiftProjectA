@@ -11,19 +11,44 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    /////////////////////////////////////////////////////////////////////
+    // Outlets
+    /////////////////////////////////////////////////////////////////////
+    
     @IBOutlet weak var window: NSWindow!
+    @IBOutlet weak var button: NSButton!
 
-
+    
+    /////////////////////////////////////////////////////////////////////
+    // Lifecycle
+    /////////////////////////////////////////////////////////////////////
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
         
-        // Another comment!
+        println("applicationDidFinishLaunching called")
     }
-
+    
+    /////////////////////////////////////////////////////////////////////
+    
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        
+        println("applicationWillTerminate called")
     }
-
-
+    
+    /////////////////////////////////////////////////////////////////////
+    
+    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+        return true;
+    }
+    
+    
+    /////////////////////////////////////////////////////////////////////
+    // Actions
+    /////////////////////////////////////////////////////////////////////
+    
+    @IBAction func userPressedButton(sender: AnyObject) {
+        
+        println("userPressedButton called")
+    }
 }
 
