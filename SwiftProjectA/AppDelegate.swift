@@ -63,11 +63,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 var contents = ""
                 contents += "Request:\n\n\(request)\n\n"
                 contents += "========== ========== ========== ==========\n\n"
-                contents += "Response:\n\n\(response)\n\n"
+                if (response != nil) {
+                    contents += "Response:\n\n\(response!)\n\n"
+                } else {
+                    contents += "Response: <nil>\n\n"
+                }
                 contents += "========== ========== ========== ==========\n\n"
-                contents += "Error:\n\n\(error)\n\n"
+                if (error != nil) {
+                    contents += "Error:\n\n\(error!)\n\n"
+                } else {
+                    contents += "Error: <nil>\n\n"
+                }
                 contents += "========== ========== ========== ==========\n\n"
-                contents += "Body:\n\n\(body)\n\n"
+                if (body != nil) {
+                    contents += "Body:\n\n\(body!)\n\n"
+                } else {
+                    contents += "Body: <nil>\n\n"
+                }
                 
                 // Log to stdout
                 println(contents)
