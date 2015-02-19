@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var button: NSButton!
-
+    @IBOutlet var textView: NSTextView!
     
     /////////////////////////////////////////////////////////////////////
     // Lifecycle
@@ -49,6 +49,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func userPressedButton(sender: AnyObject) {
         
         println("userPressedButton called")
+        
+        textView.insertText("userPressedButton\n")
     }
 }
 

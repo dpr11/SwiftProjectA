@@ -15,6 +15,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SwiftProjectA" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="J6o-32-XQz" id="SUM-dc-mR4"/>
+                <outlet property="textView" destination="xew-Px-23B" id="U4X-KS-blo"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -671,16 +672,16 @@
         <window title="SwiftProjectA" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="300" height="200"/>
+            <rect key="contentRect" x="335" y="390" width="329" height="670"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <value key="minSize" type="size" width="250" height="250"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="329" height="670"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J6o-32-XQz">
-                        <rect key="frame" x="109" y="83" width="82" height="32"/>
-                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nGy-ed-0C6">
+                        <rect key="frame" x="14" y="622" width="91" height="32"/>
+                        <buttonCell key="cell" type="push" title="Get info" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nGy-ed-0C6">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -688,13 +689,45 @@
                             <action selector="userPressedButton:" target="Voe-Tx-rLC" id="xk8-Yd-ai0"/>
                         </connections>
                     </button>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlS-Ca-FdF">
+                        <rect key="frame" x="20" y="20" width="289" height="589"/>
+                        <clipView key="contentView" id="SN6-A2-jat">
+                            <rect key="frame" x="1" y="1" width="223" height="133"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="xew-Px-23B">
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="272" height="587"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="272" height="587"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="PWD-Xd-Czz">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="GAf-fM-1Ai">
+                            <rect key="frame" x="224" y="1" width="15" height="133"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="centerX" secondItem="J6o-32-XQz" secondAttribute="centerX" id="g5e-70-2zW"/>
-                    <constraint firstAttribute="centerY" secondItem="J6o-32-XQz" secondAttribute="centerY" id="ycv-Lg-6XS"/>
+                    <constraint firstItem="AlS-Ca-FdF" firstAttribute="top" secondItem="J6o-32-XQz" secondAttribute="bottom" constant="20" id="2NU-hl-ILS"/>
+                    <constraint firstItem="J6o-32-XQz" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="FKt-gd-Moe"/>
+                    <constraint firstAttribute="trailing" secondItem="AlS-Ca-FdF" secondAttribute="trailing" constant="20" id="FUA-LC-W7g"/>
+                    <constraint firstItem="J6o-32-XQz" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="s1c-kw-Df4"/>
+                    <constraint firstItem="AlS-Ca-FdF" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="t02-hy-MK3"/>
+                    <constraint firstAttribute="bottom" secondItem="AlS-Ca-FdF" secondAttribute="bottom" constant="20" id="wFF-F0-BPg"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="234" y="367"/>
+            <point key="canvasLocation" x="240.5" y="384"/>
         </window>
     </objects>
 </document>
