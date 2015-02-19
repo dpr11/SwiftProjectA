@@ -1,0 +1,5 @@
+# Carthage and CocoaPods achieve roughly the same thing
+# Use one or the other
+
+# Require version 1.1 or later
+# github "Alamofire/Alamofire" >= 1.1

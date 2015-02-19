@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Alamofire
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -17,8 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var button: NSButton!
-    @IBOutlet weak var textView: NSTextView!
-    
+    @IBOutlet var textView: NSTextView!
+
     /////////////////////////////////////////////////////////////////////
     // Lifecycle
     /////////////////////////////////////////////////////////////////////
@@ -50,7 +51,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         println("userPressedButton called")
         
-        textView.insertText("userPressedButton\n")
+        // Set the textview contents so we know something is happenning
+        let attribString = NSAttributedString(string: "Retrieving ...", attributes: nil)
+        self.textView.textStorage?.setAttributedString(attribString)
+        
+        // Async call
+        Alamofire.request(.GET, "http://www.spelgasoftware.com")
+            .responseString { (request, response, body, error) in
+                
+                // Concatenate the response components
+                var contents = ""
+                contents += "Request:\n\n\(request)\n\n"
+                contents += "========== ========== ========== ==========\n\n"
+                contents += "Response:\n\n\(response)\n\n"
+                contents += "========== ========== ========== ==========\n\n"
+                contents += "Error:\n\n\(error)\n\n"
+                contents += "========== ========== ========== ==========\n\n"
+                contents += "Body:\n\n\(body)\n\n"
+                
+                // Log to stdout
+                println(contents)
+                
+                // Set the textviews contents
+                let attribString = NSAttributedString(string: contents, attributes: nil)
+                self.textView.textStorage?.setAttributedString(attribString)
+        }
     }
 }
 
