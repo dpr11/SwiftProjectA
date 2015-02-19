@@ -56,7 +56,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.textView.textStorage?.setAttributedString(attribString)
         
         // Async call
-        Alamofire.request(.GET, "http://www.spelgasoftware.co.uk/PhoneLog/home.html")        // "http://127.0.0.1:9876/ts?wsdl"
+        // "http://www.spelgasoftware.co.uk/PhoneLog/home.html"
+        // "http://127.0.0.1:9876/ts?wsdl"
+        Alamofire.request(.GET, "http://127.0.0.1:9876/ts?wsdl")
             .responseString { (request, response, body, error) in
                 
                 // Concatenate the response components
