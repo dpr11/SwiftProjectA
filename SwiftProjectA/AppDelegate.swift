@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var button: NSButton!
-    @IBOutlet var textView: NSTextView!
+    @IBOutlet var textView: NSTextView!         // Textviews cannot be weak-linked
 
     /////////////////////////////////////////////////////////////////////
     // Lifecycle
@@ -56,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.textView.textStorage?.setAttributedString(attribString)
         
         // Async call
-        Alamofire.request(.GET, "http://www.spelgasoftware.com")
+        Alamofire.request(.GET, "http://www.spelgasoftware.co.uk/PhoneLog/home.html")        // "http://127.0.0.1:9876/ts?wsdl"
             .responseString { (request, response, body, error) in
                 
                 // Concatenate the response components
@@ -72,7 +72,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 // Log to stdout
                 println(contents)
                 
-                // Set the textviews contents
+                // Set the textview's contents
                 let attribString = NSAttributedString(string: contents, attributes: nil)
                 self.textView.textStorage?.setAttributedString(attribString)
         }
