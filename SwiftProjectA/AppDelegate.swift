@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var button: NSButton!
-    @IBOutlet var textView: NSTextView!
+    @IBOutlet weak var textView: NSTextView!
     
     /////////////////////////////////////////////////////////////////////
     // Lifecycle
